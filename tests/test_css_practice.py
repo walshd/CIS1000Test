@@ -127,3 +127,39 @@ def test_profile_pic_has_margin_right():
     assert 'margin-right' in block or re.search(r'margin\s*:', block), (
         "Add 'margin-right' to the .profile-pic rule to give it some space from the text"
     )
+
+
+# ── Task 5: flex-wrap challenge (no hints given) ──────────────────────────────
+
+def test_layout_flex_wrap():
+    block = block_for(read('practice-styles.css'), '.page-layout')
+    assert re.search(r'flex-wrap\s*:\s*wrap', block), (
+        "Add 'flex-wrap: wrap' to the .page-layout rule"
+    )
+
+
+# ── CSS syntax validation ─────────────────────────────────────────────────────
+
+def test_css_syntax_braces_balanced():
+    """Catch missing or extra braces — a common student mistake."""
+    css = re.sub(r'/\*.*?\*/', '', read('practice-styles.css'), flags=re.DOTALL)
+    opens  = css.count('{')
+    closes = css.count('}')
+    assert opens > 0, "No CSS rules found — have you added any CSS to practice-styles.css?"
+    assert opens == closes, (
+        f"CSS has unmatched braces: {opens} opening '{{' but {closes} closing '}}'. "
+        "Check each rule block is properly closed."
+    )
+
+
+def test_css_declarations_have_colons():
+    """Check every non-empty declaration inside a rule block contains a colon."""
+    css = re.sub(r'/\*.*?\*/', '', read('practice-styles.css'), flags=re.DOTALL)
+    for block_body in re.findall(r'\{([^{}]+)\}', css):
+        for decl in block_body.split(';'):
+            decl = decl.strip()
+            if decl:
+                assert ':' in decl, (
+                    f"Invalid CSS declaration (missing colon): '{decl}'. "
+                    "CSS properties must be written as 'property: value;'"
+                )

@@ -113,6 +113,21 @@ scaffold: scaffolds/practice-styles.css
 validator: python3 -m pytest tests/test_css_practice.py::test_profile_pic_float_left tests/test_css_practice.py::test_profile_pic_has_width tests/test_css_practice.py::test_profile_pic_has_margin_right -v
 :::
 
+## Task 5 — Challenge: make the layout wrap on small screens
+
+This task gives you no example code. Use what you have learned in the tutorial to work it out.
+
+At the moment, if the browser window gets very narrow the sidebar and main content are squeezed together because flex does not wrap by default. Add a single CSS property to `.page-layout` to allow the columns to wrap onto separate rows when there is not enough horizontal space.
+
+> **Hint:** The property name was covered in the flex-wrap section of the Flexbox Navigation Bar tutorial.
+
+::: task id=practice-wrap kind=scaffold marking=auto
+**Add flex wrapping to `.page-layout` so the columns stack vertically on narrow screens — no example code given.**
+
+scaffold: scaffolds/practice-styles.css
+validator: python3 -m pytest tests/test_css_practice.py::test_layout_flex_wrap tests/test_css_practice.py::test_css_syntax_braces_balanced tests/test_css_practice.py::test_css_declarations_have_colons -v
+:::
+
 ## What you have practised
 
 - `display: flex` to create horizontal layouts
