@@ -1,0 +1,49 @@
+/* Base styles — do not change these */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
+
+nav {
+    background: #333;
+    color: white;
+    /* Task 1: add display, justify-content, align-items and height below */
+
+}
+
+nav > p {
+    padding: 0 1rem;
+    cursor: pointer;
+    margin: 0;
+    /* Task 2: add flex below */
+
+}
+
+.page-layout {
+    /* Task 3a: add display: flex below */
+
+}
+
+.sidebar {
+    background: #f4f4f4;
+    padding: 1rem;
+    /* Task 3b: add flex-basis and flex-shrink below */
+
+}
+
+.main-content {
+    padding: 1rem;
+    /* Task 3c: add flex below */
+
+}
+
+.profile-pic {
+    background: #ccc;
+    color: #666;
+    text-align: center;
+    line-height: 80px;
+    height: 80px;
+    /* Task 4: add float, width and margin-right below */
+
+}
