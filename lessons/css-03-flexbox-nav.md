@@ -12,7 +12,7 @@ Time to put this new knowledge into practice using an example of an actual page 
 
 The flexbox-nav.html and Flexbox-nav-styles.css have been pre-coded to give you a basic three-item navigation bar (See Figure 7). As it stands, all the items are styled as we would expect, with three block-level elements stacked on top of each other and taking up the full width of the browser space.
 
-![A basic three-item navigation bar.](https://teaching.computing.edgehill.ac.uk/wte/parts/9969/files/name/assets/start-nav.png)
+![A basic three-item navigation bar.](assets/start-nav.png)
 
 **Figure 7**: A basic three-item navigation bar.
 
@@ -37,7 +37,7 @@ nav{
 
 After applying the `display:flex` to the parent container, all of the nav items should now arrange themselves into a horizontal bar (this means the flex-direction is automatically set to row) instead of how they were originally stacked (See Figure 8). This shows us that the default styles of Flexbox make all items line up left to right and also makes each item have a width based on its contents.
 
-![All items in horizontal structure.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/display-flex-nav.png)
+![All items in horizontal structure.](assets/display-flex-nav.png)
 
 **Figure 8**: All items in horizontal structure.
 
@@ -45,7 +45,7 @@ After applying the `display:flex` to the parent container, all of the nav items 
 
 In our last exercise, we discussed the flexbox axis and saw the results of applying the `flex-direction: column` rule. In this example, applying this is not required as we are building a top navigation bar, but if we wanted to create a side nav navigation bar, then we would apply this. Whilst that would then make the component look like it was when all items were in the default HTML flow, it would actually create a flexible component, and so I would still create the side nav as a flex component (See Figure 9).
 
-![Flex-direction set to column.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/start-nav.png)
+![Flex-direction set to column.](assets/start-nav.png)
 
 **Figure 9**: Flex-direction set to column.
 
@@ -65,7 +65,7 @@ nav{
 }
 ```
 
-![All items in horizontal structure with left justified content.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/display-flex-nav.png)
+![All items in horizontal structure with left justified content.](assets/display-flex-nav.png)
 
 **Figure 10**: All items in horizontal structure with left justified content.
 
@@ -79,7 +79,7 @@ nav{
 }
 ```
 
-![All items in horizontal structure with justified content set to "end".](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/justify-content-flex-end-nav.png)
+![All items in horizontal structure with justified content set to "end".](assets/justify-content-flex-end-nav.png)
 
 **Figure 11**: All items in horizontal structure with justified content set to "end".
 
@@ -93,7 +93,7 @@ nav{
 }
 ```
 
-![All items in horizontal structure with justified content set to "center".](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/justify-content-center-nav.png)
+![All items in horizontal structure with justified content set to "center".](assets/justify-content-center-nav.png)
 
 **Figure 12**: All items in horizontal structure with justified content set to "center".
 
@@ -107,7 +107,7 @@ nav{
 }
 ```
 
-![All items in horizontal structure with justified content set to "space between".](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/justify-content-space-between-nav.png)
+![All items in horizontal structure with justified content set to "space between".](assets/justify-content-space-between-nav.png)
 
 **Figure 13**: All items in horizontal structure with justified content set to "space between".
 
@@ -121,7 +121,7 @@ nav{
 }
 ```
 
-![All items in horizontal structure with justified content set to "space around".](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/justify-content-space-around-nav.png)
+![All items in horizontal structure with justified content set to "space around".](assets/justify-content-space-around-nav.png)
 
 **Figure 14**: All items in horizontal structure with justified content set to "space around".
 
@@ -140,7 +140,7 @@ flex:1;
 }
 ```
 
-![All items in horizontal structure with flex property set to 1.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-1-nav.png)
+![All items in horizontal structure with flex property set to 1.](assets/flex-1-nav.png)
 
 **Figure 15**: All items in horizontal structure with flex property set to 1.
 
@@ -161,7 +161,7 @@ flex:2;
 }
 ```
 
-![All items in horizontal structure with flex property set to 1 for all p tags but nth child 3 (contact) set to flex of 2.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-contact-2-nav.png)
+![All items in horizontal structure with flex property set to 1 for all p tags but nth child 3 (contact) set to flex of 2.](assets/flex-contact-2-nav.png)
 
 **Figure 16**: All items in horizontal structure with flex property set to 1 for all p tags but nth child 3 (contact) set to flex of 2.
 
@@ -186,7 +186,7 @@ margin-left:auto;
 }
 ```
 
-![Margin left set to auto on 3rd child element (contact).](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/margin-left-auto-nav.png)
+![Margin left set to auto on 3rd child element (contact).](assets/margin-left-auto-nav.png)
 
 **Figure 17**: Margin left set to auto on 3rd child element (contact).
 
@@ -208,7 +208,7 @@ nav>p:nth-child(3) {
 }
 ```
 
-![Margin left set to auto on 2nd child element (About).](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/margin-left-auto-about-nav.png)
+![Margin left set to auto on 2nd child element (About).](assets/margin-left-auto-about-nav.png)
 
 **Figure 18**: Margin left set to auto on 2nd child element (About).
 
@@ -226,7 +226,7 @@ nav{
 }
 ```
 
-![Height of 300 pixels added to elements.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/add-height-nav.png)
+![Height of 300 pixels added to elements.](assets/add-height-nav.png)
 
 **Figure 19**: Height of 300 pixels added to elements.
 
@@ -243,7 +243,7 @@ nav{
 }
 ```
 
-![align-items: flex-start.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/align-items-flex-start-nav.png)
+![align-items: flex-start.](assets/align-items-flex-start-nav.png)
 
 **Figure 20**: align-items: flex-start.
 
@@ -258,7 +258,7 @@ nav{
 }
 ```
 
-![align-items: centre.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/align-items-center-nav.png)
+![align-items: centre.](assets/align-items-center-nav.png)
 
 **Figure 21**: align-items: centre.
 
@@ -273,7 +273,7 @@ nav{
 }
 ```
 
-![align-items: flex-end.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/align-items-flex-end-nav.png)
+![align-items: flex-end.](assets/align-items-flex-end-nav.png)
 
 **Figure 22**: align-items: flex-end.
 
@@ -293,7 +293,7 @@ nav{
 }
 ```
 
-![Perfectly centred nav using justify-content " centre" and align-items "centre".](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/perfect-centering-nav.png)
+![Perfectly centred nav using justify-content " centre" and align-items "centre".](assets/perfect-centering-nav.png)
 
 **Figure 23**: Perfectly centred nav using justify-content " centre" and align-items "centre".
 
@@ -313,7 +313,7 @@ nav>p:nth-child(2) {
 }
 ```
 
-![Resetting align-items for seconf child only to "flex-start".](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/align-self-flex-start-nav.png)
+![Resetting align-items for seconf child only to "flex-start".](assets/align-self-flex-start-nav.png)
 
 **Figure 24**: Resetting align-items for second child only to "flex-start".
 
@@ -336,7 +336,7 @@ width: 500px;
 }
 ```
 
-![Large widths set but still all show on one line.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/500px-nav.png)
+![Large widths set but still all show on one line.](assets/500px-nav.png)
 
 **Figure 25**: Large widths set but still all show on one line.
 
@@ -356,7 +356,7 @@ width: 500px;
 }
 ```
 
-![Large width set but flex-wrap set to "wrap".](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-wrap-500px-nav.png)
+![Large width set but flex-wrap set to "wrap".](assets/flex-wrap-500px-nav.png)
 
 **Figure 26**: Large width set but flex-wrap set to "wrap".
 
@@ -374,7 +374,7 @@ width: 360px;
 }
 ```
 
-![Flex-wrap set to "wrap" and width of items set to 360 pixels allows two items to fit on a line, but the third wraps.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/360px-nav.png)
+![Flex-wrap set to "wrap" and width of items set to 360 pixels allows two items to fit on a line, but the third wraps.](assets/360px-nav.png)
 
 **Figure 27**: Flex-wrap set to "wrap" and width of items set to 360 pixels allows two items to fit on a line, but the third wraps.
 
@@ -443,13 +443,13 @@ nav>p:nth-child(2) {
 }
 ```
 
-![Flex-basis set to 200 pixels.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-basis-200px-nav.png)
+![Flex-basis set to 200 pixels.](assets/flex-basis-200px-nav.png)
 
 **Figure 28**: Flex-basis set to 200 pixels.
 
 Having flex-basis set to 200px for each item means that both buttons will initially be set to 200px each, but if the container is smaller, then they will shrink to fit proportionately as can be seen in the Figure 29.
 
-![Flex-basis set to 200 pixels and items shrinking to fit (animated  gif).](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-basis-200px-nav.gif)
+![Flex-basis set to 200 pixels and items shrinking to fit (animated  gif).](assets/flex-basis-200px-nav.gif)
 
 **Figure 29**: Flex-basis set to 200 pixels and items shrinking to fit (Animated gif).
 
@@ -471,7 +471,7 @@ nav>p:nth-child(2) {
 }
 ```
 
-![Flex-basis set to 200 pixels and items shrinking to fit and with flex-grow set to 1 they expand fill the space (Animated gif).](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-basis-200px-flex-grow-nav.gif)
+![Flex-basis set to 200 pixels and items shrinking to fit and with flex-grow set to 1 they expand fill the space (Animated gif).](assets/flex-basis-200px-flex-grow-nav.gif)
 
 **Figure 30**: Flex-basis set to 200 pixels and items shrinking to fit and with flex-grow set to 1 they expand fill the space (Animated gif).
 
@@ -493,7 +493,7 @@ nav>p:nth-child(2) {
 }
 ```
 
-![Only one items set to expand.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-basis-200px-flex-grow-0-1-nav.gif)
+![Only one items set to expand.](assets/flex-basis-200px-flex-grow-0-1-nav.gif)
 
 **Figure 31**: Only one items set to expand.
 
@@ -521,7 +521,7 @@ nav>p:nth-child(2) {
 }
 ```
 
-![Items will not shrink past set width.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-basis-200px-flex-shrink-nav.gif)
+![Items will not shrink past set width.](assets/flex-basis-200px-flex-shrink-nav.gif)
 
 **Figure 32**: Items will not shrink past set width.
 
@@ -559,7 +559,7 @@ nav>p:nth-child(2) {
 }
 ```
 
-![Changing the order of items using the order property.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-order-nav.png)
+![Changing the order of items using the order property.](assets/flex-order-nav.png)
 
 **Figure 33**: Changing the order of items using the order property.
 
@@ -589,7 +589,7 @@ nav>p:nth-child(3) {
 }
 ```
 
-![Changing the order of items using the order property on multiple items.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-order-all-nav.png)
+![Changing the order of items using the order property on multiple items.](assets/flex-order-all-nav.png)
 
 **Figure 34**: Changing the order of items using the order property on multiple items.
 
@@ -617,13 +617,13 @@ Just as an example, we can add a div inside of our Nav flex-container and then i
 </body>
 ```
 
-![Nesting items.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-nested1-nav.png)
+![Nesting items.](assets/flex-nested1-nav.png)
 
 **Figure 35**: Nesting items.
 
 There are currently no styles set for our Div p elements, and so they use the default Flow and are stacked on top of each other. If we turn the div into a flex container using the `display: flex;` then the child p elements of the div will line up next to each other and be flex-items (See Figure 36). This means that they can be controlled exactly as you have just learnt but that these items are independent of the nav children.
 
-![Nesting items controlled by flex.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-nested2-nav.png)
+![Nesting items controlled by flex.](assets/flex-nested2-nav.png)
 
 **Figure 36**: Nesting items controlled by flex.
 
@@ -633,7 +633,7 @@ Please have a play with the code on these and see how it works.
 
 Can you get the nested items to be stacked on top of each other (but still be flex-items) with 'nested 2' on the top and both being the first items in the nav as in Figure 37 (without changing any HTML code)?
 
-![Flex Navigation Challenge.](https://teaching.computing.edgehill.ac.uk/wte/parts/10022/files/name/assets/flex-nav-challenge.png)
+![Flex Navigation Challenge.](assets/flex-nav-challenge.png)
 
 **Figure 37**: Flex Navigation Challenge.
 

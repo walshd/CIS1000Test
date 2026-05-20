@@ -54,7 +54,7 @@ This is quite a powerful command all on its own, as you can probably see from yo
 
 What has happened is that the `disply:flex` command causes the `<section>` element to become a flex container, and its children to become flex items.
 
-![Flex Display:flex.](https://teaching.computing.edgehill.ac.uk/wte/parts/10021/files/name/assets/flex-display-flex.png)
+![Flex Display:flex.](assets/flex-display-flex.png)
 
 **Figure 6**: Flex Display:flex.
 

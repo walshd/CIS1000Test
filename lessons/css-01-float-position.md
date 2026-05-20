@@ -34,7 +34,7 @@ div {
 
 Once the CSS has saved (the red styles.css tab has changed from red to green), then you will see that the output has changed and now all of your elements now have a set width and height and a border, but they are all still stacked on top of each other, even though they are restricted to a width of 50px (See Figure 1). This is because they are still block-level elements and are following the default Flow.
 
-![Divs with border stacked after float.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/float-before.png)
+![Divs with border stacked after float.](assets/float-before.png)
 
 **Figure 1**: Divs with border stacked after float.
 
@@ -73,7 +73,7 @@ section{
 
 You should now see that the p tag is just below the start of the divs (See Figure 2).
 
-![P Tag floating.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/float-after.png)
+![P Tag floating.](assets/float-after.png)
 
 **Figure 2**: P Tag floating.
 
@@ -95,7 +95,7 @@ p{
 
 The result should be that the left and right floats on the divs have continued to work, but the p tag has been removed from the Float and now sits at the bottom (See Figure 3).
 
-![Float cleared.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/clear-float.png)
+![Float cleared.](assets/clear-float.png)
 
 **Figure 3**: Float cleared.
 
@@ -123,7 +123,7 @@ left: 40px;
 }
 ```
 
-![Position relative.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/position-relative.png)
+![Position relative.](assets/position-relative.png)
 
 **Figure 4**: Position relative.
 
@@ -145,7 +145,7 @@ left: 40px;
 
 So all we really did in the above code was to change the word relative to absolute, but the result is quite substantial.
 
-![Position absolute.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/position-absolute.png)
+![Position absolute.](assets/position-absolute.png)
 
 **Figure 5**: Position absolute.
 
