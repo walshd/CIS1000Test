@@ -8,42 +8,37 @@ prerequisites: []
 
 # CSS Float and Position
 
-Before we tackle Flexbox, we need to understand why it was invented. The older tools — `float` and `position` — were used for layout long before Flexbox existed. Understanding their behaviour makes it clear what problem Flexbox solves.
+**Please ignore the flexbox-nav HTML and CSS for now.**
 
-Open `float-index.html` in the preview to see where we start: three numbered `<div>` elements and a paragraph, all stacked vertically. This is **normal flow** — block elements stack top to bottom by default.
+Before we have a go at Flexbox, understanding how Float and Position work is required.
 
-## Task 1 — Add base styles
+On the index.html page on the right, you will see you have three div tags, each with a number in them. Then there is a p tag containing some Lorem ipsum text (Lorem Ipsum is a non-sense language used as a placeholder in designs that will be replaced later with actual textual content).
 
-First we give the elements a visible size and border so we can see what's happening as we experiment.
+Right now, you can see that the elements are all stacked on top of each other. This is the normal flow as both the DIV and paragraph tags are both Block-level elements. (you can discover all of the block-level elements at: [https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements))
 
-Open `float-styles.css` and add the following:
+To play about with the Float, we will now add in some basic CSS which I will not explain right now, as we will cover CSS in a later tutorial, but it is helpful to use in this tutorial as a demonstration of Float and Position.
+
+In the styles.css tab type in the following code:
 
 ```css
-div, p {
-    border: 1px solid red;
+div, p{
+ border: 1px solid red;
 }
 
 div {
-    margin: 5px;
-    width: 50px;
-    height: 200px;
+  margin: 5px;
+  width: 50px;
+  height: 200px;
 }
 ```
 
-Save the file (`Cmd+S`) then click **Run tests** to check.
+Once the CSS has saved (the red styles.css tab has changed from red to green), then you will see that the output has changed and now all of your elements now have a set width and height and a border, but they are all still stacked on top of each other, even though they are restricted to a width of 50px (See Figure 1). This is because they are still block-level elements and are following the default Flow.
 
-::: task id=base-css kind=scaffold marking=auto
-**Add base CSS rules to `float-styles.css` giving `div` a `border`, `width: 50px`, `height: 200px`, and `margin: 5px`.**
+![Divs with border stacked after float.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/float-before.png)
 
-scaffold: scaffolds/float-styles.css
-validator: python3 -m pytest tests/test_css_float.py::test_base_css_has_border tests/test_css_float.py::test_base_css_div_width tests/test_css_float.py::test_base_css_div_height tests/test_css_float.py::test_base_css_div_margin -v
-:::
+**Figure 1**: Divs with border stacked after float.
 
-## Task 2 — Add float classes to the HTML
-
-Now tell the browser which elements should float. Floated elements are pulled out of normal flow and pushed left or right, letting other content wrap around them.
-
-Edit `float-index.html` and add CSS classes to the three `<div>` elements:
+Alter the opening div tags in your HTML code to look like the following (you are only adding CSS classes to the HTML elements):
 
 ```html
 <div class="left">1</div>
@@ -51,44 +46,111 @@ Edit `float-index.html` and add CSS classes to the three `<div>` elements:
 <div class="right">3</div>
 ```
 
-Save then run the tests.
-
-::: task id=float-html-classes kind=scaffold marking=auto
-**Add `class="left"` to the first two `<div>` elements and `class="right"` to the third in `float-index.html`.**
-
-scaffold: scaffolds/float-index.html
-validator: python3 -m pytest tests/test_css_float.py::test_float_html_left_classes tests/test_css_float.py::test_float_html_right_class -v
-:::
-
-## Task 3 — Write the float CSS rules
-
-Adding a class to the HTML doesn't do anything on its own — we need CSS rules that use those classes to apply the float property.
-
-Add these rules to the bottom of `float-styles.css`:
+Now add the following CSS to the end of your CSS code:
 
 ```css
-.left {
+.left{
     float: left;
 }
 
-.right {
+.right{
     float: right;
 }
 ```
 
-After saving, divs 1 and 2 should sit side-by-side on the left and div 3 should jump to the far right. Notice how the paragraph text wraps underneath — this is the defining behaviour of floats, and also why they cause problems at page-layout scale.
+You should see now that the elements are no longer stacked on top of each other, but instead, the paragraph is still in the normal flow and seems to start just before div's 1 and 2, and then div 3 is on the right.
 
-::: task id=float-css-rules kind=scaffold marking=auto
-**Add `.left { float: left; }` and `.right { float: right; }` rules to `float-styles.css`.**
+We can sort this ordering issue by telling the parent section tag to float.
 
-scaffold: scaffolds/float-styles.css
-validator: python3 -m pytest tests/test_css_float.py::test_float_left_rule tests/test_css_float.py::test_float_right_rule -v
-:::
+Add the following rule to the end of your CSS file:
 
-## What you've seen
+```css
+section{
+    float: left;
+    width: 100%;
+}
+```
 
-- Block elements follow **normal flow** by default (top to bottom).
-- `float` pulls an element out of flow and lets content wrap around it.
-- Floats were widely misused for full-page layouts before Flexbox existed — they were never designed for that.
+You should now see that the p tag is just below the start of the divs (See Figure 2).
 
-Move on to the next lesson to meet the tool that replaced them.
+![P Tag floating.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/float-after.png)
+
+**Figure 2**: P Tag floating.
+
+Have a play around with changing the class assignments in the HTML file. Make them all "left", then add "right to the first div", etc.
+
+Once you have finished, set it back to what it was before you started playing around.
+
+## Clear
+
+When using Float, there is always a time you do not want an element to continue flowing the Float. For this, we use a command called **CLEAR**. Depending on which Float we want to stop depends upon the value you add to it. The value could be Left, Right, Both or None.
+
+In our code example, we can force the p tag to be at the bottom of the divs. Add the following code to the bottom of your CSS file:
+
+```css
+p{
+   clear: left;
+}
+```
+
+The result should be that the left and right floats on the divs have continued to work, but the p tag has been removed from the Float and now sits at the bottom (See Figure 3).
+
+![Float cleared.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/clear-float.png)
+
+**Figure 3**: Float cleared.
+
+Have a go at trying to clear the Float from div 2.
+
+## Position
+
+Now you have a good basic grasp of how to float elements to the left or right of the screen and how to bring them back into the normal flow, it is time to look at position. Position accepts values of top, right, bottom, and left. Not all are always required, but there should always be at least one vertical (top or bottom) and one horizontal (left or right) value provided.
+
+We will use position to control our paragraph of text.
+
+### Relative
+
+The first value we will explore is that of position:relative.
+
+Relative positions the element according to the normal flow of the document and then offsets it relative to itself based on the values provided.
+
+In your css file change your current p tag style to:
+
+```css
+p{
+position: relative;
+top: 40px;
+left: 40px;
+}
+```
+
+![Position relative.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/position-relative.png)
+
+**Figure 4**: Position relative.
+
+As you can see in Figure 4, the p tag is kept in the flow and then moved 40px down from the top and pushed 40px to the right by adding the 40px to the left-hand side. Notice how this keeps the content the same distance inside of the p tag as it was when the p tag was just part of the normal flow (you can look at either of the earlier images).
+
+### Absolute
+
+As we said earlier, Position absolute removes the element from the flow altogether and positions the element on the page based upon the values provided.
+
+Make your p tag css code look like:
+
+```css
+p{
+position: absolute;
+top: 40px;
+left: 40px;
+}
+```
+
+So all we really did in the above code was to change the word relative to absolute, but the result is quite substantial.
+
+![Position absolute.](https://teaching.computing.edgehill.ac.uk/wte/parts/10020/files/name/assets/position-absolute.png)
+
+**Figure 5**: Position absolute.
+
+In Figure 5 you can see the content (text) of the p tag no longer keeps that left margin that the normal flow forced. Instead, the text now overlaps the div tags.
+
+**WARNING** position: absolute can be very dangerous to use and should be used very rarely because you do not really know what screen size your user will have, and you are basically forcing the element into that position on whatever screen it is shown on. With it removing the elements from the normal flow, this means that it will probably never look the same on a users screen as it does on your screen when developing it.
+
+Right, now you know the basics of how block and inline elements are controlled in the layout by flow and float and position, so it is time to move onto Flexbox.

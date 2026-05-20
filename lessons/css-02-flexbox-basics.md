@@ -8,86 +8,56 @@ prerequisites: [css-01-float-position]
 
 # Flexbox Basics
 
-Flexbox — the Flexible Box Module — is a CSS layout model designed for distributing space and aligning items in one dimension at a time (either a row or a column).
+The first thing to do is clear out some of the code we set for the last few coding exercises.
 
-The Mozilla Foundation defines it well:
+Make your html divs look like:
 
-> *"Flexbox was designed as a one-dimensional layout model and as a method that could offer space distribution between items in an interface and powerful alignment capabilities."*
+```html
+<div>1</div>
+<div>2</div>
+<div>3</div>
+```
 
-We will work with `flex-index.html` and `flex-styles.css`. Open `flex-styles.css` — you will see the same base styles from the previous lesson are already in place. Your job is to add three Flexbox properties, one task at a time.
-
-## Task 1 — Turn the section into a flex container
-
-Flexbox always starts by declaring a **flex container** — the parent element. Add a `section` rule to `flex-styles.css`:
+Now make your css file look like:
 
 ```css
-section {
-    display: flex;
+div, p{
+   border: 1px solid red;
+}
+div {
+    margin: 5px;
+    width: 50px;
+    height: 200px;
+
 }
 ```
 
-This single line causes all direct children of `<section>` (the three divs and the paragraph) to become **flex items** that arrange themselves in a row.
+Your output window should now look like it did at the start of today's tutorial, with all the elements stacked on top of one another.
 
-::: task id=display-flex kind=scaffold marking=auto
-**Add `section { display: flex; }` to `flex-styles.css`.**
+## Flexbox
 
-scaffold: scaffolds/flex-styles.css
-validator: python3 -m pytest tests/test_css_flexbox.py::test_section_display_flex -v
-:::
+### Flexbox - display
 
-## Task 2 — Distribute items with justify-content
+When starting to code out flexbox, we need to tell the browser which elements we want to use flexbox on. We do this by setting a special value of **display** on the parent element. In our case, this is the section tag that holds all of the other elements. It is rare that you would want all of your page elements to be controlled by flex, but in this example, the three divs and one p tag are all we have.
 
-Right now the items are packed against the left edge. `justify-content` controls how leftover space is distributed **along the main axis** (horizontal, in our case).
+To use flexbox, we want to set the **display** value to **flex** for flexbox. Add the following CSS command to the bottom of your CSS file.
 
-Add `justify-content: space-around` to your `section` rule:
+> **NOTE:** You may see a little yellow warning sign appear on the side of the code window on the CSS when you code flex elements. Please ignore these it is not anything wrong with your code; it is just the code authenticator for the WTE is awaiting a release update to check the newer HTML and CSS code elements.
 
 ```css
 section {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
 }
 ```
 
-`space-around` puts equal space on both sides of each item. Other values worth trying: `space-between`, `center`, `flex-end`.
+This is quite a powerful command all on its own, as you can probably see from your output panel or Figure 6 below. All of the content has automatically come into one line, with each element only taking the width of its content.
 
-::: task id=justify-content kind=scaffold marking=auto
-**Add `justify-content: space-around` to the `section` rule in `flex-styles.css`.**
+What has happened is that the `disply:flex` command causes the `<section>` element to become a flex container, and its children to become flex items.
 
-scaffold: scaffolds/flex-styles.css
-validator: python3 -m pytest tests/test_css_flexbox.py::test_section_justify_content tests/test_css_flexbox.py::test_section_justify_content_value -v
-:::
+![Flex Display:flex.](https://teaching.computing.edgehill.ac.uk/wte/parts/10021/files/name/assets/flex-display-flex.png)
 
-## Task 3 — Centre items vertically with align-items
+**Figure 6**: Flex Display:flex.
 
-`align-items` controls alignment on the **cross axis** (vertical, in our case). To see it work, the container needs a height that is taller than its content.
+### Flexbox - flex-direction
 
-Update the `section` rule:
-
-```css
-section {
-    display: flex;
-    justify-content: space-around;
-    height: 300px;
-    align-items: center;
-}
-```
-
-The items should now be vertically centred within the 300px container.
-
-::: task id=align-items kind=scaffold marking=auto
-**Add `height: 300px` and `align-items: center` to the `section` rule in `flex-styles.css`.**
-
-scaffold: scaffolds/flex-styles.css
-validator: python3 -m pytest tests/test_css_flexbox.py::test_section_align_items tests/test_css_flexbox.py::test_section_align_items_center tests/test_css_flexbox.py::test_section_has_height -v
-:::
-
-## What you've seen
-
-| Property | Controls |
-|---|---|
-| `display: flex` | Turns the element into a flex container |
-| `justify-content` | Distributes space along the main axis (row) |
-| `align-items` | Aligns items on the cross axis (column) |
-| `flex-direction` | Switches between row (default) and column |
-
-In the next lesson you will apply this to a real navigation bar.
+The default direction of flexbox is in the "row", but we can also easily turn this into a "column" should we wish by adding the `flex-direction: column;` command to the section CSS styles. In our case, this would only give us the same representation as we had in the default flow, so we will not add it. But by all means, try it and see what it does but **please remove it after that**.
